@@ -26,7 +26,7 @@ import React, { useState } from 'react';
 
         try {
             // Send the file to the backend for conversion
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/convert`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/convert`, {
                 method: 'POST',
                 body: formData,
             });

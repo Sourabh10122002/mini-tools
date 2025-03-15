@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CaretDown, CaretUp } from '@phosphor-icons/react';
+import { CaretDown } from '@phosphor-icons/react';
 
 const FAQs = () => {
-    const faqs = [
+    const faqsData = [
         {
             question: 'What tools does this platform offer?',
             answer:
@@ -37,15 +37,30 @@ const FAQs = () => {
     ];
 
     const [openIndex, setOpenIndex] = useState(null);
+    const faqRefs = useRef([]);
 
     const toggleFAQ = (index) => {
+        // When opening a new FAQ, scroll it into view if needed
+        if (openIndex !== index) {
+            setTimeout(() => {
+                // Add a small delay to allow animation to start
+                faqRefs.current[index]?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                });
+            }, 50);
+        }
         setOpenIndex(openIndex === index ? null : index);
     };
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-800 to-gray-900 py-12 pt-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            {/* Original background effects */}
             <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-800/20 rounded-full mix-blend-screen filter blur-3xl z-0"></div>
             <div className="absolute -top-32 -right-32 w-96 h-96 bg-gray-900/20 rounded-full mix-blend-screen filter blur-3xl z-0"></div>
+
+            {/* New white blur flare ball */}
+            <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-white/10 rounded-full mix-blend-overlay filter blur-3xl z-0 animate-pulse"></div>
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-12">
@@ -56,17 +71,48 @@ const FAQs = () => {
                 </motion.div>
                 <div className="flex flex-col-reverse lg:flex-row gap-8">
                     <div className="w-full lg:w-1/2 space-y-4">
-                        {faqs.map((faq, index) => (
-                            <motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-400/30 transition duration-300">
-                                <button onClick={() => toggleFAQ(index)} className="w-full flex justify-between items-center text-left focus:outline-none p-6">
+                        {faqsData.map((faq, index) => (
+                            <motion.div
+                                key={index}
+                                ref={el => faqRefs.current[index] = el}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-400/30 transition duration-300"
+                                layout
+                            >
+                                <button
+                                    onClick={() => toggleFAQ(index)}
+                                    className="w-full flex justify-between items-center text-left focus:outline-none p-6"
+                                >
                                     <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
-                                    <span className="text-blue-400">
-                                        {openIndex === index ? <CaretUp weight="fill" className="h-6 w-6" /> : <CaretDown weight="fill" className="h-6 w-6" />}
-                                    </span>
+                                    <motion.span
+                                        animate={{ rotate: openIndex === index ? 180 : 0 }}
+                                        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                                        className="text-blue-400"
+                                    >
+                                        <CaretDown weight="fill" className="h-6 w-6" />
+                                    </motion.span>
                                 </button>
-                                <AnimatePresence>
+                                <AnimatePresence initial={false}>
                                     {openIndex === index && (
-                                        <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="overflow-hidden">
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{
+                                                opacity: 1,
+                                                height: 'auto'
+                                            }}
+                                            exit={{
+                                                opacity: 0,
+                                                height: 0
+                                            }}
+                                            transition={{
+                                                duration: 0.4,
+                                                ease: [0.4, 0, 0.2, 1],
+                                                opacity: { duration: 0.25 }
+                                            }}
+                                            className="overflow-hidden"
+                                        >
                                             <div className="px-6 pb-6 text-blue-200">{faq.answer}</div>
                                         </motion.div>
                                     )}
@@ -74,9 +120,12 @@ const FAQs = () => {
                             </motion.div>
                         ))}
                     </div>
-                    <div className="w-full lg:w-1/2 flex items-center justify-center">
-                        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="w-full h-full flex items-center justify-center">
-                            <img src="/images/Faqs.png" alt="FAQs Vector" className="w-full h-auto max-w-md mx-auto" />
+                    <div className="w-full lg:w-1/2 flex items-center justify-center relative">
+                        {/* White flare behind the image */}
+                        <div className="absolute w-56 h-56 bg-white/20 rounded-full filter blur-xl z-0"></div>
+
+                        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="w-full h-full flex items-center justify-center relative z-10">
+                            <img src="/images/Faqs.png" alt="FAQs Vector" className="w-full h-auto max-w-md mx-auto relative z-10" />
                         </motion.div>
                     </div>
                 </div>

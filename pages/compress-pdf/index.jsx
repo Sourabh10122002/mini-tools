@@ -30,7 +30,7 @@ import { saveAs } from "file-saver";
             formData.append("pdf", file);
 
             try {
-                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/compress`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/compress`, {
                     method: "POST",
                     body: formData,
                 });
