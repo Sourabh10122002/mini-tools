@@ -54,20 +54,18 @@ const FAQs = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-800 to-gray-900 py-12 pt-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-            {/* Original background effects */}
-            <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-800/20 rounded-full mix-blend-screen filter blur-3xl z-0"></div>
-            <div className="absolute -top-32 -right-32 w-96 h-96 bg-gray-900/20 rounded-full mix-blend-screen filter blur-3xl z-0"></div>
-
-            {/* New white blur flare ball */}
-            <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-white/10 rounded-full mix-blend-overlay filter blur-3xl z-0 animate-pulse"></div>
-
-            <div className="max-w-7xl mx-auto relative z-10">
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-12">
-                    <div className="inline-block bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
-                        <h2 className="mt-4 text-4xl font-extrabold text-white sm:text-5xl">FAQs</h2>
-                        <p className="mt-4 text-xl text-blue-200/90">Find answers to common questions about our platform</p>
+        <div className="py-24 px-4 sm:px-6 lg:px-8 relative z-10 text-white">
+            <div className="max-w-7xl mx-auto relative">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-16">
+                    <div className="inline-block">
+                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                            Frequently Asked <span className="text-blue-400">Questions</span>
+                        </h2>
+                        <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
                     </div>
+                    <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
+                        Everything you need to know about our tools and services.
+                    </p>
                 </motion.div>
                 <div className="flex flex-col-reverse lg:flex-row gap-8">
                     <div className="w-full lg:w-1/2 space-y-4">

@@ -1,13 +1,82 @@
+"use client";
+
+import { useState } from 'react';
 import Card from '@/components/card/Card';
 import FAQs from '@/components/FAQs/FAQs';
+import { MagnifyingGlass, Sparkle } from "@phosphor-icons/react";
+import { motion } from "framer-motion";
 
 const Home = () => {
+    const [searchQuery, setSearchQuery] = useState("");
+
     return (
-        <div className='relative bg-gradient-to-br from-slate-900 to-blue-900 pt-24'>
-            <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-800/20 rounded-full mix-blend-screen filter blur-3xl z-0"></div>
-            <h1 className="text-2xl text-center font-bold text-gray-200 my-2">Mini tools helps you to convert images to text, generate QR Code, docx to pdf and vice versa.</h1>
-            <Card />
-            <FAQs />
+        <div className='min-h-screen relative bg-[#0f172a] overflow-hidden pt-24 pb-12'>
+            {/* Background Gradients */}
+            <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[128px] mix-blend-screen animate-pulse-slow"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-cyan-600/20 rounded-full blur-[128px] mix-blend-screen animate-pulse-slow delay-1000"></div>
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Hero Section */}
+                <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4"
+                    >
+                        <Sparkle size={16} weight="fill" />
+                        <span>All-in-one Developer Tools</span>
+                    </motion.div>
+
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight"
+                    >
+                        Simplify Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Workflow</span>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-lg text-slate-400 leading-relaxed"
+                    >
+                        A curated collection of powerful tools to help you convert, generate, and edit files with ease. Free, fast, and secure.
+                    </motion.p>
+
+                    {/* Search Bar */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="relative max-w-md mx-auto mt-8 group"
+                    >
+                        <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                            <MagnifyingGlass size={20} className="text-slate-500 group-focus-within:text-blue-400 transition-colors" />
+                        </div>
+                        <input
+                            type="text"
+                            placeholder="Search for a tool..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="w-full bg-slate-800/50 backdrop-blur-xl border border-slate-700 text-white pl-12 pr-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all shadow-lg placeholder:text-slate-500"
+                        />
+                        <div className="absolute inset-0 rounded-2xl bg-blue-500/5 opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none"></div>
+                    </motion.div>
+                </div>
+
+                {/* Tools Grid */}
+                <Card searchQuery={searchQuery} />
+
+                {/* FAQs */}
+                <div className="mt-24">
+                    <FAQs />
+                </div>
+            </div>
         </div>
     )
 }
