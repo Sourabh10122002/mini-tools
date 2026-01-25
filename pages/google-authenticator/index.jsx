@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TOTP } from "jsotp";
 
- const GoogleAuthenticator = () => {
+const GoogleAuthenticator = () => {
     const [secret, setSecret] = useState("");
     const [code, setCode] = useState("");
     const [timeLeft, setTimeLeft] = useState(30);
@@ -56,7 +56,7 @@ import { TOTP } from "jsotp";
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-900 to-gray-900 text-white flex flex-col items-center justify-center p-6">
+        <div className="min-h-screen text-white flex flex-col items-center justify-center p-6">
             <div className="w-full max-w-4xl space-y-8">
                 {/* Header */}
                 <h1 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
@@ -142,6 +142,6 @@ import { TOTP } from "jsotp";
             </div>
         </div>
     );
- };
+};
 
- export default GoogleAuthenticator;
+export default GoogleAuthenticator;

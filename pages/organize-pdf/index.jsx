@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef,useEffect } from 'react';
-import { PDFDocument,degrees } from 'pdf-lib';
+import { useState, useRef, useEffect } from 'react';
+import { PDFDocument, degrees } from 'pdf-lib';
 
 const index = () => {
     const [pdfFile, setPdfFile] = useState(null);
@@ -177,13 +177,13 @@ const index = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-900 to-gray-900 text-white flex flex-col items-center pt-20">
+        <div className="min-h-screen text-white flex flex-col items-center pt-20">
             <h1 className="text-4xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300  md:mt-0 mt-6">
                 {title}
             </h1>
             {/* Upload Section */}
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mx-8 mb-8 shadow-sm">
-                <h2 className="text-xl font-semibold mb-4 text-gray-700">Upload a PDF to { firstWord}</h2>
+                <h2 className="text-xl font-semibold mb-4 text-gray-700">Upload a PDF to {firstWord}</h2>
                 <div className="flex items-center justify-center gap-4">
                     <button
                         onClick={() => fileInputRef.current?.click()}

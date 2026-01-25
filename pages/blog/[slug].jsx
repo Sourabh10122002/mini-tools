@@ -10,7 +10,7 @@ const BlogDetailPage = () => {
 
     if (!blog) {
         return (
-            <div className="bg-gradient-to-br from-slate-900 via-blue-800 to-gray-900 min-h-screen flex items-center justify-center">
+            <div className="min-h-screen flex items-center justify-center">
                 <h1 className="text-2xl text-white">Blog not found.</h1>
             </div>
         );
@@ -30,7 +30,7 @@ const BlogDetailPage = () => {
         }));
 
     return (
-        <div className="bg-gradient-to-br from-slate-900 via-blue-800 to-gray-900 min-h-screen pt-24 p-8">
+        <div className="min-h-screen pt-24 p-8">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
                 <div className="lg:col-span-3">
                     <motion.h1

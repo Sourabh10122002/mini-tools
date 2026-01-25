@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Tesseract from "tesseract.js";
 
- const ImageToText = () => {
+const ImageToText = () => {
     const [image, setImage] = useState(null);
     const [imageUrl, setImageUrl] = useState("");
     const [text, setText] = useState("");
@@ -97,7 +97,7 @@ import Tesseract from "tesseract.js";
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-gray-900 p-6">
+        <div className="flex flex-col items-center justify-center min-h-screen p-6">
             <h1 className="text-4xl font-bold text-white mb-6 drop-shadow-md">🖼️ Image to Text Converter</h1>
 
             <div className="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg w-full max-w-lg text-white border border-white/20">
@@ -142,6 +142,6 @@ import Tesseract from "tesseract.js";
             )}
         </div>
     );
- };
+};
 
- export default ImageToText;
+export default ImageToText;

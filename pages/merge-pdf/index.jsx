@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PDFDocument } from 'pdf-lib';
 
- const MergePdf = () => {
+const MergePdf = () => {
     const [files, setFiles] = useState([]);
     const [mergedPdfUrl, setMergedPdfUrl] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -91,7 +91,7 @@ import { PDFDocument } from 'pdf-lib';
     };
 
     return (
-        <div className="bg-gradient-to-br from-blue-900 to-gray-900 text-white min-h-screen p-8">
+        <div className="text-white min-h-screen p-8">
             <div className="max-w-6xl mx-auto">
                 <h1 className="text-3xl font-bold my-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Merge PDF</h1>
                 <div className="flex flex-col items-center mb-8">
@@ -177,6 +177,6 @@ import { PDFDocument } from 'pdf-lib';
             </div>
         </div>
     );
- };
+};
 
- export default MergePdf;
+export default MergePdf;

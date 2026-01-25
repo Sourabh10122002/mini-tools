@@ -3,7 +3,7 @@ import exifr from "exifr";
 import { PDFDocument } from "pdf-lib";
 import mammoth from "mammoth";
 
- const MetadataExtractor = () => {
+const MetadataExtractor = () => {
     const [file, setFile] = useState(null);
     const [metadata, setMetadata] = useState(null);
     const [error, setError] = useState("");
@@ -81,7 +81,7 @@ import mammoth from "mammoth";
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-900 to-gray-900 text-white flex flex-col items-center justify-center p-6">
+        <div className="min-h-screen text-white flex flex-col items-center justify-center p-6">
             <div className="bg-gray-800 bg-opacity-75 rounded-lg shadow-2xl p-8 max-w-2xl w-full">
                 <h1 className="text-3xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Extract Metadata from Any File</h1>
 
@@ -146,6 +146,6 @@ import mammoth from "mammoth";
             </div>
         </div>
     );
- };
+};
 
- export default MetadataExtractor;
+export default MetadataExtractor;

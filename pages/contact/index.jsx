@@ -75,10 +75,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-800 to-gray-900 py-12 pt-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-800/20 rounded-full mix-blend-screen filter blur-3xl"></div>
-      <div className="absolute -top-32 -right-32 w-96 h-96 bg-gray-900/20 rounded-full mix-blend-screen filter blur-3xl"></div>
+    <div className="py-12 pt-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div

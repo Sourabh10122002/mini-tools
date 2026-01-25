@@ -1,7 +1,7 @@
 import { BrowserQRCodeReader } from '@zxing/browser';
 import React, { useState, useEffect, useRef } from 'react';
 
- const QrCodeScanner = () => {
+const QrCodeScanner = () => {
     const codeReader = useRef(new BrowserQRCodeReader());
     const videoRef = useRef(null);
     const [result, setResult] = useState('');
@@ -28,35 +28,35 @@ import React, { useState, useEffect, useRef } from 'react';
                 handleCameraError(err);
             }
 
-        const handleCameraError = (error) => {
-            console.error('Camera error:', error);
-            setError(`Camera access denied. Please:
+            const handleCameraError = (error) => {
+                console.error('Camera error:', error);
+                setError(`Camera access denied. Please:
         1. Allow camera permissions
         2. Ensure site is loaded via HTTPS
         3. Check camera availability`);
-            setIsLoading(false);
+                setIsLoading(false);
+            };
+
+            if (navigator.mediaDevices) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then((stream) => {
+                        streamRef.current = stream; // Store the stream for cleanup
+                        getDevices();
+                    })
+                    .catch(handleCameraError);
+            } else {
+                setError('Camera API not supported in this browser');
+                setIsLoading(false);
+            }
         };
 
-        if (navigator.mediaDevices) {
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then((stream) => {
-                    streamRef.current = stream; // Store the stream for cleanup
-                    getDevices();
-                })
-                .catch(handleCameraError);
-        } else {
-            setError('Camera API not supported in this browser');
-            setIsLoading(false);
-        }
-    };
-
-    getDevices();
-    return () => {
-        if (streamRef.current) {
-            streamRef.current.getTracks().forEach(track => track.stop());
-            streamRef.current = null;
-        }
-    };
+        getDevices();
+        return () => {
+            if (streamRef.current) {
+                streamRef.current.getTracks().forEach(track => track.stop());
+                streamRef.current = null;
+            }
+        };
     }, []);
 
     // Camera scanning
@@ -169,7 +169,7 @@ import React, { useState, useEffect, useRef } from 'react';
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-900 to-gray-900 p-5">
+        <div className="min-h-screen p-5">
             <div className="max-w-2xl mx-auto">
                 <h2 className="text-4xl font-bold my-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                     QR Code Scanner
@@ -277,6 +277,6 @@ import React, { useState, useEffect, useRef } from 'react';
             </div>
         </div>
     );
- };
+};
 
- export default QrCodeScanner; 
+export default QrCodeScanner; 

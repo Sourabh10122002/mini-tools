@@ -11,9 +11,9 @@ import {
     InformationCircleIcon
 } from '@heroicons/react/24/outline';
 
- const TermsOfService = () => {
+const TermsOfService = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-800 to-gray-900 p-8 pt-20 py-12">
+        <div className="min-h-screen p-8 pt-20 py-12">
             <div className="max-w-4xl mx-auto animate-fade-in-up">
 
                 {/* Header Section */}

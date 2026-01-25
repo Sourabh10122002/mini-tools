@@ -63,7 +63,7 @@ const QrCodeGenerator = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-900 to-gray-900 p-5">
+        <div className="min-h-screen p-5">
             <div className="max-w-2xl mx-auto">
                 <h2 className="text-4xl font-bold my-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                     Advanced QR Code Generator

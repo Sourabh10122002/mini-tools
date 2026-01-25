@@ -1,6 +1,6 @@
- const Tutorials = () => {
+const Tutorials = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-800 to-gray-900 p-5 py-20">
+        <div className="min-h-screen p-5 py-20">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12">
                 <div className="md:hidden mb-6 relative group">
                     <button className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700 text-slate-300 flex items-center justify-between hover:bg-slate-700/30 transition-colors">
@@ -46,8 +46,8 @@
                                     </svg>
                                 </div>
                                 <span className="text-slate-300">PDF To DOCX</span>
-                            </a>      
-                            
+                            </a>
+
                             <a
                                 href="#qr-generator"
                                 className="flex items-center gap-3 p-3 rounded-md hover:bg-slate-700/30 transition-colors"
@@ -58,8 +58,8 @@
                                     </svg>
                                 </div>
                                 <span className="text-slate-300">QR Generator</span>
-                            </a>       
-                            
+                            </a>
+
                             <a
                                 href="#docx-to-pdf"
                                 className="flex items-center gap-3 p-3 rounded-md hover:bg-slate-700/30 transition-colors"
@@ -70,8 +70,8 @@
                                     </svg>
                                 </div>
                                 <span className="text-slate-300">DOCX To PDF</span>
-                            </a>    
-                            
+                            </a>
+
                             <a
                                 href="#image-to-pdf"
                                 className="flex items-center gap-3 p-3 rounded-md hover:bg-slate-700/30 transition-colors"
@@ -82,7 +82,7 @@
                                     </svg>
                                 </div>
                                 <span className="text-slate-300">Image To PDF</span>
-                            </a>                   
+                            </a>
 
                             <a
                                 href="#qr-scanner"
@@ -239,8 +239,8 @@
                                 </div>
                                 <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">Image to PDF</span>
                             </a>
-                       
-                            
+
+
                             <a href="#qr-scanner" className="group flex items-center gap-3 p-3 rounded-lg transition-all hover:bg-slate-700/30">
                                 <div className="w-8 h-8 rounded-md bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-500/30 transition-colors">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -883,8 +883,8 @@
                     <div id="image-to-pdf" className="mt-16 max-w-4xl mx-auto">
                         <div className="space-y-8 bg-gray-800/30 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/80">
                             <h2 className="text-3xl font-semibold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                            PDF To Image Conversion
-                        </h2>
+                                PDF To Image Conversion
+                            </h2>
                             {/* Step 1 */}
                             <div className="flex gap-6 group">
                                 <div className="flex flex-col items-center">
@@ -1929,7 +1929,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     {/* PDF Compressor Tutorial */}
                     <div id="pdf-compress" className="group relative bg-slate-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/80 hover:border-cyan-400/30 transition-all duration-300">
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -2339,6 +2339,6 @@
             </div>
         </div>
     );
- };
+};
 
- export default Tutorials;
+export default Tutorials;

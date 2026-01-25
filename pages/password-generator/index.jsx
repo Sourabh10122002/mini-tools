@@ -96,7 +96,7 @@ const PasswordGenerator = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-900 to-gray-900 text-white flex flex-col items-center justify-center p-6">
+        <div className="min-h-screen text-white flex flex-col items-center justify-center p-6">
             <h1 className="text-4xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300  md:mt-0 mt-20">
                 Password Generator
             </h1>

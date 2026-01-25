@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
- const DocxToPdf = () => {
+const DocxToPdf = () => {
     const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -50,7 +50,7 @@ import React, { useState } from 'react';
     };
 
     return (
-        <div className="min-h-screen w-full bg-gradient-to-br from-blue-900 to-gray-900 text-white p-8">
+        <div className="min-h-screen w-full text-white p-8">
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-3xl font-bold my-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                     DOCX to PDF Converter
@@ -108,6 +108,6 @@ import React, { useState } from 'react';
             </div>
         </div>
     );
- };
+};
 
- export default DocxToPdf;
+export default DocxToPdf;

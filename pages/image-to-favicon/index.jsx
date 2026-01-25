@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
- const ImageToFavicon = () => {
+const ImageToFavicon = () => {
     const [faviconUrl, setFaviconUrl] = useState(null);
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -47,10 +47,10 @@ import React, { useState } from "react";
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-gray-900 p-6">
+        <div className="min-h-screen flex items-center justify-center p-6">
             <div className="max-w-md w-full p-6 bg-white rounded-xl shadow-md">
                 <h1 className="text-3xl font-bold my-1 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Image to Favicon</h1>
-                
+
 
                 {/* File Upload Section */}
                 <div className="mb-6">
@@ -147,6 +147,6 @@ import React, { useState } from "react";
             </div>
         </div>
     );
- };
+};
 
- export default ImageToFavicon;
+export default ImageToFavicon;

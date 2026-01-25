@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
- const InvertImage = () => {
+const InvertImage = () => {
     const [image, setImage] = useState(null);
     const [editedImageUrl, setEditedImageUrl] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -159,7 +159,7 @@ import React, { useState, useEffect } from 'react';
     };
 
     return (
-        <div className="bg-gradient-to-br from-blue-900 to-gray-900 text-white min-h-screen p-8">
+        <div className="text-white min-h-screen p-8">
             <div className="max-w-6xl mx-auto">
                 <h1 className="text-3xl font-bold my-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Image Invert</h1>
                 <div className="flex flex-col items-center mb-8">
@@ -345,6 +345,6 @@ import React, { useState, useEffect } from 'react';
             </div>
         </div>
     );
- };
+};
 
- export default InvertImage;
+export default InvertImage;

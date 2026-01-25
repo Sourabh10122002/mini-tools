@@ -10,12 +10,8 @@ const Home = () => {
     const [searchQuery, setSearchQuery] = useState("");
 
     return (
-        <div className='min-h-screen relative bg-[#0f172a] overflow-hidden pt-24 pb-12'>
-            {/* Background Gradients */}
-            <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[128px] mix-blend-screen animate-pulse-slow"></div>
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-cyan-600/20 rounded-full blur-[128px] mix-blend-screen animate-pulse-slow delay-1000"></div>
-            </div>
+        <div className='pt-24 pb-12'>
+
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Hero Section */}
@@ -73,7 +69,7 @@ const Home = () => {
                 <Card searchQuery={searchQuery} />
 
                 {/* FAQs */}
-                <div className="mt-24">
+                <div className="mt-2">
                     <FAQs />
                 </div>
             </div>

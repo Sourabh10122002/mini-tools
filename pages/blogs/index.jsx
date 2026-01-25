@@ -23,7 +23,7 @@ const BlogGrid = () => {
     }
 
     return (
-        <div className="bg-gradient-to-br from-slate-900 via-blue-800 to-gray-900 min-h-screen p-8">
+        <div className="min-h-screen p-8">
             <div className="container mx-auto">
                 <h1
                     style={{ fontSize: '3rem' }}
