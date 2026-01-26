@@ -23,7 +23,7 @@ const BlogGrid = () => {
     }
 
     return (
-        <div className="min-h-screen p-8">
+        <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8">
             <div className="container mx-auto">
                 <h1
                     style={{ fontSize: '3rem' }}

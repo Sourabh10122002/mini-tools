@@ -177,7 +177,7 @@ const index = () => {
     };
 
     return (
-        <div className="min-h-screen text-white flex flex-col items-center pt-20">
+        <div className="min-h-screen pt-28 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white">
             <h1 className="text-4xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300  md:mt-0 mt-6">
                 {title}
             </h1>

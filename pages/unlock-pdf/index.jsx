@@ -72,7 +72,7 @@ const index = () => {
     };
 
     return (
-        <div className="min-h-screen text-white flex flex-col justify-center items-center">
+        <div className="min-h-screen pt-28 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white">
             <div className="w-full max-w-2xl px-4 space-y-8">
                 <h1 className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 font-bold text-center mb-8">Unlock PDF</h1>
 

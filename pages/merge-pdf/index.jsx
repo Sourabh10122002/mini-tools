@@ -91,7 +91,7 @@ const MergePdf = () => {
     };
 
     return (
-        <div className="text-white min-h-screen p-8">
+        <div className="min-h-screen pt-28 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white">
             <div className="max-w-6xl mx-auto">
                 <h1 className="text-3xl font-bold my-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Merge PDF</h1>
                 <div className="flex flex-col items-center mb-8">

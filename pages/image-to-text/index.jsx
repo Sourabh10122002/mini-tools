@@ -97,7 +97,7 @@ const ImageToText = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen p-6">
+        <div className="min-h-screen pt-28 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             <h1 className="text-4xl font-bold text-white mb-6 drop-shadow-md">🖼️ Image to Text Converter</h1>
 
             <div className="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg w-full max-w-lg text-white border border-white/20">

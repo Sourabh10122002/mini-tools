@@ -81,7 +81,7 @@ const MetadataExtractor = () => {
     };
 
     return (
-        <div className="min-h-screen text-white flex flex-col items-center justify-center p-6">
+        <div className="min-h-screen pt-28 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-white">
             <div className="bg-gray-800 bg-opacity-75 rounded-lg shadow-2xl p-8 max-w-2xl w-full">
                 <h1 className="text-3xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Extract Metadata from Any File</h1>
 

@@ -169,9 +169,9 @@ const QrCodeScanner = () => {
     };
 
     return (
-        <div className="min-h-screen p-5">
-            <div className="max-w-2xl mx-auto">
-                <h2 className="text-4xl font-bold my-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+        <div className="min-h-screen pt-28 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+            <div className="max-w-2xl w-full mx-auto">
+                <h2 className="text-4xl font-bold mb-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                     QR Code Scanner
                 </h2>
 

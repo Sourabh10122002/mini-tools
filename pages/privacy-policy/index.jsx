@@ -22,7 +22,7 @@ import {
 
 const PrivacyPolicy = () => {
     return (
-        <div className="min-h-screen text-gray-100 p-8 pt-20 py-12">
+        <div className="min-h-screen text-gray-100 pt-24 pb-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto animate-fade-in-up">
 
                 {/* Header Section */}

@@ -1,6 +1,6 @@
 const Tutorials = () => {
     return (
-        <div className="min-h-screen p-5 py-20">
+        <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12">
                 <div className="md:hidden mb-6 relative group">
                     <button className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700 text-slate-300 flex items-center justify-between hover:bg-slate-700/30 transition-colors">

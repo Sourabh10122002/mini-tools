@@ -47,7 +47,7 @@ const ImageToFavicon = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-6">
+        <div className="min-h-screen pt-28 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             <div className="max-w-md w-full p-6 bg-white rounded-xl shadow-md">
                 <h1 className="text-3xl font-bold my-1 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Image to Favicon</h1>
 
